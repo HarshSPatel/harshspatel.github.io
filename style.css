@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Butcherman&display=swap');
+
+@keyframes skew {
+  0% {
+    transform: skewY(20deg);
+  }
+  100% {
+    transform: skewY(-20deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0px 0px 10px 3px rgba(255, 0, 0, 0.4),
+      0 0 0 8px #D6D5DB,
+      0 0 0 18px #96989E;
+  }
+
+
+  25%,
+  75% {
+    box-shadow:
+      0px 0px 10px 8px rgba(255, 0, 0, 0.8),
+      0 0 0 8px #D6D5DB,
+      0 0 0 18px #96989E;
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    background-image: radial-gradient(ellipse at center, #ff0505 10%, #960910 85%, #960910 85%);
+  }
+
+  10%,
+  90% {
+    background-image: radial-gradient(ellipse at center, #ff0505 20%, #960910 85%, #960910 85%);
+  }
+
+  20%,
+  80% {
+    background-image: radial-gradient(ellipse at center, #ff0505 30%, #960910 85%, #960910 85%);
+  }
+
+  30%,
+  70% {
+    background-image: radial-gradient(ellipse at center, #ff0505 40%, #960910 85%, #960910 85%);
+  }
+
+  40%,
+  60% {
+    background-image: radial-gradient(ellipse at center, #ff0505 50%, #960910 85%, #960910 85%);
+  }
+
+  50% {
+    background-image: radial-gradient(ellipse at center, #ff0505 60%, #960910 85%, #960910 85%);
+  }
+}
+
+@keyframes implode {
+  0% {
+    transform: scale(1);
+  }
+
+  20%,
+  40% {
+    transform: scale(10);
+  }
+
+  60%,
+  80% {
+    transform: scale(0.01);
+  }
+
+  80% {
+    transform: scale(0.01);
+    opacity: 1;
+    background: transparent;
+    /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9); */
+  }
+
+  100% {
+    transform: scale(0.01);
+    opacity: 0;
+    background: rgba;
+    /* box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.0); */
+  }
+
+}
+
+.doomsday {
+  animation: pulse 2s infinite backwards; 
+    transition-duration: 2s;
+    transform: scale(20deg);
+}
+
+.doomsday::before {
+  content: "Destruction button";
+  font-family: 'Butcherman', cursive;
+  font-size: 2.5rem;
+}
+
+.doomsday:hover {
+  animation: skew 3s infinite;
+  animation-direction: alternate;
+  transform: skew(20deg);
+  transform-origin: top;
+  
+}
+
+.doomsday:active {
+  animation-name: wave, implode;
+    transition: background-color 2s ease;
+  animation-duration: 0.2s, 5s;
+  animation-iteration-count: infinite, 1;
+  animation-delay: 0s, 3s;
+  animation-fill-mode: backwards, forwards;
+}
